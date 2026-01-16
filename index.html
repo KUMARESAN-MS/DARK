@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark - Netflix Series Fan Page</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+  /* =========================================
+     HERO SECTION STYLES
+     ========================================= */
+
+  /* --- 1. Main Grid Layout --- */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 4rem;
+    align-items: center;
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Wrapper for Left Column (Image + Trailer Card) */
+  .hero-left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between image and card */
+  }
+
+  /* --- 2. Hero Images --- */
+  .hero-image {
+    width: 100%;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* --- 3. Hero Content Box (Right Side) --- */
+  .hero-content {
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease; /* Smooth transition for hover */
+  }
+
+  /* Hero Content Hover Effect (Red Glow) */
+  .hero-content:hover {
+    /*border-color: #C41E3A; /* Red Border */
+    box-shadow: 0 12px 36px rgba(196, 30, 58, 0.3); /* Red Glow */
+    transform: translateY(-4px); /* Slight Lift */
+  }
+
+  /* Logo inside Content Box */
+  .hero-content .nav-logo-link {
+    display: flex; /* Ensures centering works */
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .hero-content .nav-logo-img {
+    height: 80px; /* Larger logo size */
+  }
+
+  /* Typography */
+  .hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #fff;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #b0b0b0;
+    margin-bottom: 2rem;
+  }
+
+  /* --- 4. Hero Buttons Grid --- */
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* --- 5. Trailer Card (Left Side Bottom) --- */
+  .trailer-card {
+    display: block;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    box-sizing: border-box;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+  }
+
+  .trailer-content {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  /* Trailer Card Hover Effect (Red Theme) */
+  .trailer-card:hover {
+    background: rgba(196, 30, 58, 0.15); /* Red Tint Background */
+    border-color: #C41E3A;
+    box-shadow: 0 12px 36px rgba(196, 30, 58, 0.3);
+    transform: translateY(-4px);
+    
+    /* Force Text Color Override */
+    color: #C41E3A; 
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+
+  /* Play Icon Button */
+  .play-icon {
+    width: 45px;
+    height: 45px;
+    background: #C41E3A;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding-left: 3px;
+    flex-shrink: 0;
+  }
+
+  .trailer-text h3 {
+    font-size: 1.2rem;
+    margin: 0 0 0.3rem 0;
+    color: #fff;
+  }
+
+  .trailer-text p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: #b0b0b0;
+    text-align: left;
+  }
+
+  /* --- 6. Mobile Responsive --- */
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr; /* Stack vertically */
+      gap: 2rem;
+      padding: 3rem 1.5rem;
+    }
+
+    .hero-image {
+      height: 300px;
+    }
+
+    .hero-content {
+      padding: 2rem;
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo-link">
+        <img src="img/background/logo.png" alt="Dark Logo" class="nav-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="episodes.html">Episodes</a></li>
+        <li><a href="characters.html">Characters</a></li>
+        
+        <li><a href="timeline.html">Timeline</a></li>
+        <li><a href="scifi-elements.html">Sci-Fi Elements</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+<section class="hero">
+      
+      <div class="hero-left-col">
+        
+        <div class="hero-image">
+          <img src="img/background/front.jpg" alt="Dark series promotional image" loading="lazy">
+        </div>
+
+        <a href="https://youtu.be/ESEUoa-mz2c" target="_blank" class="trailer-card">
+          <div class="trailer-content">
+            
+            <div class="trailer-text">
+              <h3>Watch Official Trailer</h3>
+              <p>Season 1 Teaser • Youtube</p>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="hero-content">
+        <a href="index.html" class="nav-logo-link">
+          <img src="img/background/logo.png" alt="Dark Logo" class="nav-logo-img">
+        </a>
+        <p>When children go missing in a small German town, their disappearance exposes the fractured relationships among four families and uncovers a time-travel conspiracy that spans centuries. A mysterious power awakens as the boundaries between past, present, and future begin to collapse.</p>
+        <div class="hero-buttons">
+          <a href="episodes.html" class="btn btn-primary">Explore Episodes</a>
+          <a href="characters.html" class="btn btn-secondary">The Characters</a>
+          <a href="timeline.html" class="btn btn-secondary">Time-Line</a>
+          <a href="scifi-elements.html" class="btn btn-primary">Sci-Fi</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+        <p>&copy; created-by @kumaresan.ad23@krct.ac.in</p>
+    <p> 2026 Dark Fan Page. This is a fan-made page celebrating the Netflix series Dark.</p>
+    
+  </footer>
+</body>
+</html>

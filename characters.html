@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Characters - Dark Fan Page</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- No inline behavior CSS here; card-specific ID->content rules placed inline in each card for clarity -->
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo-link">
+        <img src="img/background/logo.png" alt="Dark Logo" class="nav-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="episodes.html">Episodes</a></li>
+        <li><a href="characters.html" aria-current="page" class="active">Characters</a></li>
+        
+        <li><a href="timeline.html">Timeline</a></li>
+        <li><a href="scifi-elements.html">Sci-Fi Elements</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-section">
+      <h1>Characters</h1>
+
+      <!-- ===== THE KAHNWALD FAMILY ===== -->
+      <div class="family-group" aria-label="Kahnwald family">
+        <h2 class="family-name">The Kahnwald Family</h2>
+        <div class="character-row">
+
+          <!-- Jonas: 3 versions -->
+          <article class="char-card">
+            <!-- Radios + labels (tabs) -->
+            <input type="radio" id="jonas-v1" name="jonas-versions" checked>
+            <label for="jonas-v1" class="tab-label">Teen <span class="tab-year">2019</span></label>
+
+            <input type="radio" id="jonas-v2" name="jonas-versions">
+            <label for="jonas-v2" class="tab-label"> Adult <span class="tab-year">Adult</span></label>
+
+            <input type="radio" id="jonas-v3" name="jonas-versions">
+            <label for="jonas-v3" class="tab-label">Adam <span class="tab-year">Elder</span></label>
+
+            <div class="version-contents">
+              <!-- show when #jonas-v1 checked -->
+              <div class="jonas-v1 v-default">
+                <figure>
+                  <img src="img/characters/Kahnwald family/Jonas Kahnwald/teenager.WEBP" alt="Jonas (Teen)" style="object-position: center 20%;">
+                  <figcaption>Jonas  - Teen (2019)</figcaption>
+                </figure>
+                
+                <p>The protagonist. He is traumatized by his father's suicide. After discovering the time travel tunnels, his primary motivation is to bring his father (Mikkel) back to the present, only to realize that doing so would erase his own existence.</p>
+              </div>
+
+              <div class="jonas-v2">
+                <figure>
+                  <img src="img/characters/Kahnwald family/Jonas Kahnwald/adult.WEBP" alt="Jonas (Stranger)" style="object-position: center 10%;">
+                  <figcaption>Jonas - The Stranger (Adult)</figcaption>
+                </figure>
+                <div class="vc-meta">
+                  
+                </div>
+                <p>A weary, hardened traveler from the future (2052). He carries a mysterious machine in a suitcase intended to destroy the wormhole, but he is often manipulated by his older self.</p>
+              </div>
+
+              <div class="jonas-v3">
+                <figure>
+                  <img src="img/characters/Kahnwald family/Jonas Kahnwald/old.WEBP" alt="Jonas (Adam)" style="object-position: center 10%;">
+                  <figcaption>Jonas - Adam (Elder)</figcaption>
+                </figure>
+                <div class="vc-meta">
+                 
+                </div>
+                <p>The scarred leader of Sic Mundus. He believes the cycle of time is a prison and his ultimate goal is to destroy "the knot" (the entire universe) to end the suffering, even if it means sacrificing his loved ones.</p>
+              </div>
+            </div>
+
+            <!-- Per-card display rules (these inline selectors activate the right content) -->
+            <style>
+              #jonas-v1:checked ~ .version-contents .jonas-v1 { display:block; }
+              #jonas-v2:checked ~ .version-contents .jonas-v2 { display:block; }
+              #jonas-v3:checked ~ .version-contents .jonas-v3 { display:block; }
+            </style>
+          </article>
+
+                    <!-- Michael / Mikkel: two states -->
+          <article class="char-card">
+            <input type="radio" id="mikkel-v1" name="mikkel-versions" checked>
+            <label for="mikkel-v1" class="tab-label">Mikkel <span class="tab-year">2019</span></label>
+
+            <input type="radio" id="mikkel-v2" name="mikkel-versions">
+            <label for="mikkel-v2" class="tab-label">Michael <span class="tab-year"> adult</span></label>
+
+            <div class="version-contents">
+              <div class="mikkel-v1 v-default">
+                <figure>
+                  <img src="img/characters/Nielsen family/Mikkel Nielsen  Michael Kahnwald/young.webp" alt="Mikkel child 2019" style="object-position: center 40%;">
+                  <figcaption>Mikkel - Child (2019)</figcaption>
+                </figure>
+                <p>The youngest Nielsen child who gets lost in the caves and travels back to 1986. He gets stuck there, is adopted by Ines Kahnwald, and grows up to be Michael.</p>
+              </div>
+              <div class="mikkel-v2">
+                <figure>
+                  <img src="img/characters/Nielsen family/Mikkel Nielsen  Michael Kahnwald/adult.webp" alt="Michael adult" style="object-position: center 40%;">
+                  <figcaption>Michael - Adult</figcaption>
+                </figure>
+                <p>Jonas’s father. A gentle artist who is haunted by his past. His suicide in the first episode is the catalyst for the entire series.</p>
+              </div>
+            </div>
+            <style>
+              #mikkel-v1:checked ~ .version-contents .mikkel-v1 { display:block; }
+              #mikkel-v2:checked ~ .version-contents .mikkel-v2 { display:block; }
+            </style>
+          </article>
+
+          <!-- Hannah: 2 versions -->
+          <article class="char-card">
+            <input type="radio" id="hannah-v1" name="hannah-versions" checked>
+            <label for="hannah-v1" class="tab-label">Teen <span class="tab-year">1986</span></label>
+
+            <input type="radio" id="hannah-v2" name="hannah-versions">
+            <label for="hannah-v2" class="tab-label">Adult <span class="tab-year">2019</span></label>
+
+            <div class="version-contents">
+              <div class="hannah-v1 v-default">
+                <figure>
+                  <img src="img/characters/Kahnwald family/Hannah Kahnwald/young.WEBP" alt="Hannah Teen">
+                  <figcaption>Hannah - Teen (1986)</figcaption>
+                </figure>
+                <p>A shy, obsessive girl who has a crush on Ulrich Nielsen and is jealous of Katharina. She lodges a false police report that gets Ulrich in trouble.</p>
+              </div>
+              <div class="hannah-v2">
+                <figure>
+                  <img src="img/characters/Kahnwald family/Hannah Kahnwald/adult.webp" alt="Hannah Adult">
+                  <figcaption>Hannah - Adult (2019)</figcaption>
+                </figure>
+                <p>Jonas’s mother. She feels trapped in her life and engages in an affair with Ulrich Nielsen. She later steals the time machine to travel back to 1954 to pursue a life with him (or revenge on him).</p>
+              </div>
+            </div>
+            <style>
+              #hannah-v1:checked ~ .version-contents .hannah-v1 { display:block; }
+              #hannah-v2:checked ~ .version-contents .hannah-v2 { display:block; }
+            </style>
+          </article>
+
+          <!-- Ines: 3 versions -->
+          <article class="char-card">
+            <input type="radio" id="ines-v1" name="ines-versions" checked>
+            <label for="ines-v1" class="tab-label">Teen <span class="tab-year">1953</span></label>
+
+            <input type="radio" id="ines-v2" name="ines-versions">
+            <label for="ines-v2" class="tab-label">Adult <span class="tab-year">1986</span></label>
+
+            <input type="radio" id="ines-v3" name="ines-versions">
+            <label for="ines-v3" class="tab-label">Elder <span class="tab-year">2019</span></label>
+
+            <div class="version-contents">
+              <div class="ines-v1 v-default">
+                <figure>
+                  <img src="img/characters/Kahnwald family/Ines Kahnwald/young.webp" alt="Ines 1953">
+                  <figcaption>Ines - Teen (1953)</figcaption>
+                </figure>
+                <p>A young girl working at the clock shop.</p>
+              </div>
+              <div class="ines-v2">
+                <figure>
+                  <img src="img/characters/Kahnwald family/Ines Kahnwald/adult.webp" alt="Ines 1986">
+                  <figcaption>Ines - Adult (1986)</figcaption>
+                </figure>
+                <p>A nurse who adopts the lost boy, Mikkel. She eventually realizes he is telling the truth about being from the future and secretly drugs him to make him forget and stay with her.</p>
+              </div>
+              <div class="ines-v3">
+                <figure>
+                  <img src="img/characters/Kahnwald family/Ines Kahnwald/old.webp" alt="Ines 2019">
+                  <figcaption>Ines - Elder (2019)</figcaption>
+                </figure>
+                <p>Jonas's estranged grandmother who holds onto Michael's suicide note.</p>
+              </div>
+            </div>
+            <style>
+              #ines-v1:checked ~ .version-contents .ines-v1 { display:block; }
+              #ines-v2:checked ~ .version-contents .ines-v2 { display:block; }
+              #ines-v3:checked ~ .version-contents .ines-v3 { display:block; }
+            </style>
+          </article>
+
+
+
+        </div>
+      </div>
+
+      <!-- ===== THE NIELSEN FAMILY ===== -->
+      <div class="family-group" aria-label="Nielsen family">
+        <h2 class="family-name">The Nielsen Family</h2>
+        <div class="character-row">
+
+          <!-- Martha: 3 versions (Prime / Alt / Eva) -->
+          <article class="char-card">
+            <input type="radio" id="martha-v1" name="martha-versions" checked>
+            <label for="martha-v1" class="tab-label">Prime <span class="tab-year">Prime</span></label>
+
+            <input type="radio" id="martha-v2" name="martha-versions">
+            <label for="martha-v2" class="tab-label">Alt <span class="tab-year">Mirror</span></label>
+
+            <input type="radio" id="martha-v3" name="martha-versions">
+            <label for="martha-v3" class="tab-label">Eva <span class="tab-year">Elder</span></label>
+
+            <div class="version-contents">
+              <div class="martha-v1 v-default">
+                <figure>
+                  <img src="img/characters/Nielsen family/Martha Nielsen/teenager.webp" alt="Martha Prime" style="object-position: center 20%;">
+                  <figcaption>Martha - Teen (Prime World)</figcaption>
+                </figure>
+                <p>Jonas’s love interest. She is an artistic student caught in the middle of the strange events in Winden. She becomes a tragic figure whose death triggers Jonas’s transformation.</p>
+              </div>
+              <div class="martha-v2">
+                <figure>
+                  <img src="img/characters/Nielsen family/Martha Nielsen/Alt_Martha.jpg" alt="Martha Alt">
+                  <figcaption>Martha - Alt-Martha (Mirror World)</figcaption>
+                </figure>
+                <p>A version of Martha from a parallel universe where Jonas was never born. She becomes a time traveler similar to Jonas.</p>
+              </div>
+              <div class="martha-v3">
+                <figure>
+                  <img src="img/characters/Nielsen family/Martha Nielsen/old alt_martha.jpeg" alt="Martha Eva" style="object-position: center 40%;">
+                  <figcaption>Martha - Eva (Elder Alt-Martha)</figcaption>
+                </figure>
+                <p>The leader of Erit Lux (the counterpart to Sic Mundus). Unlike Adam, she fights to preserve the knot and the loop to ensure her son (The Unknown) continues to exist.</p>
+              </div>
+            </div>
+            <style>
+              #martha-v1:checked ~ .version-contents .martha-v1 { display:block; }
+              #martha-v2:checked ~ .version-contents .martha-v2 { display:block; }
+              #martha-v3:checked ~ .version-contents .martha-v3 { display:block; }
+            </style>
+          </article>
+
+          <!-- Ulrich: 3 versions -->
+          <article class="char-card">
+            <input type="radio" id="ulrich-v1" name="ulrich-versions" checked>
+            <label for="ulrich-v1" class="tab-label">Teen <span class="tab-year">1986</span></label>
+
+            <input type="radio" id="ulrich-v2" name="ulrich-versions">
+            <label for="ulrich-v2" class="tab-label">Adult <span class="tab-year">2019</span></label>
+
+            <input type="radio" id="ulrich-v3" name="ulrich-versions">
+            <label for="ulrich-v3" class="tab-label">Elder <span class="tab-year">1987</span></label>
+
+            <div class="version-contents">
+              <div class="ulrich-v1 v-default">
+                <figure>
+                  <img src="img/characters/Nielsen family/Ulrich Nielsen/teenager.webp" alt="Ulrich 1986">
+                  <figcaption>Ulrich - Teen (1986)</figcaption>
+                </figure>
+                <p>A rebellious metalhead who bullies others but is deeply affected by the disappearance of his brother, Mads.</p>
+              </div>
+              <div class="ulrich-v2">
+                <figure>
+                  <img src="img/characters/Nielsen family/Ulrich Nielsen/adult.webp" alt="Ulrich 2019">
+                  <figcaption>Ulrich - Adult (2019)</figcaption>
+                </figure>
+                <p>A police officer and unfaithful husband. When his son Mikkel disappears, he becomes desperate. He travels back to 1953, tries to kill young Helge Doppler (thinking it will save the children in the future), and is arrested.</p>
+              </div>
+              <div class="ulrich-v3">
+                <figure>
+                  <img src="img/characters/Nielsen family/Ulrich Nielsen/old.webp" alt="Ulrich elder 1987">
+                  <figcaption>Ulrich - Elder (1987)</figcaption>
+                </figure>
+                <p>Having spent over 30 years in a psychiatric ward after being wrongly imprisoned in the 50s, he is a broken man who eventually escapes to try and find Mikkel in 1987.</p>
+              </div>
+            </div>
+            <style>
+              #ulrich-v1:checked ~ .version-contents .ulrich-v1 { display:block; }
+              #ulrich-v2:checked ~ .version-contents .ulrich-v2 { display:block; }
+              #ulrich-v3:checked ~ .version-contents .ulrich-v3 { display:block; }
+            </style>
+          </article>
+
+          <!-- Katharina: 3 versions -->
+          <article class="char-card">
+            <input type="radio" id="katharina-v1" name="katharina-versions" checked>
+            <label for="katharina-v1" class="tab-label">Teen <span class="tab-year">1986</span></label>
+
+            <input type="radio" id="katharina-v2" name="katharina-versions">
+            <label for="katharina-v2" class="tab-label">Adult <span class="tab-year">2019</span></label>
+
+
+            <div class="version-contents">
+              <div class="katharina-v1 v-default">
+                <figure>
+                  <img src="img/characters/Nielsen family/Katharina Nielsen/teenager.webp" alt="Katharina 1986">
+                  <figcaption>Katharina - Teen (1986)</figcaption>
+                </figure>
+                <p>The "alpha" girl of the school. She is rebellious and deeply in love with Ulrich. She bullies Regina Tiedemann, believing Regina reported Ulrich to the police for rape (though it was actually Hannah).</p>
+              </div>
+              <div class="katharina-v2">
+                <figure>
+                  <img src="img/characters/Nielsen family/Katharina Nielsen/adult.webp" alt="Katharina 2019" style="object-position: center 40%;">
+                  <figcaption>Katharina - Adult (2019)</figcaption>
+                </figure>
+                <p>The school principal and a fierce mother. When she discovers Ulrich is cheating and her children are missing, she becomes relentless. She eventually maps out the time travel caves herself.She travels back to 1987 to rescue Mikkel but is tragically killed by her own mother (Helene Albers) in a struggle, before she can succeed.</p>
+              </div>
+              
+            </div>
+            <style>
+              #katharina-v1:checked ~ .version-contents .katharina-v1 { display:block; }
+              #katharina-v2:checked ~ .version-contents .katharina-v2 { display:block; }
+              
+            </style>
+          </article>
+
+          <!-- Magnus -->
+          <article class="char-card">
+            <input type="radio" id="magnus-v1" name="magnus-versions" checked>
+            <label for="magnus-v1" class="tab-label">Teen <span class="tab-year">2019</span></label>
+
+            <input type="radio" id="magnus-v2" name="magnus-versions">
+            <label for="magnus-v2" class="tab-label">Adult <span class="tab-year">1921/1888</span></label>
+
+            <div class="version-contents">
+              <div class="magnus-v1 v-default">
+                <figure>
+                  <img src="img/characters/Nielsen family/Magnus Nielsen/teenager.webp" alt="Magnus 2019">
+                  <figcaption>Magnus - Teen (2019)</figcaption>
+                </figure>
+                <p>Ulrich’s eldest son. He starts as a typical high schooler concerned about his missing brother Mikkel and his relationship with Franziska Doppler. He eventually uncovers the time travel secret with the other teens.</p>
+              </div>
+              <div class="magnus-v2">
+                <figure>
+                  <img src="img/characters/Nielsen family/Magnus Nielsen/old.webp" alt="Magnus adult 1921">
+                  <figcaption>Magnus - Adult (1921/1888)</figcaption>
+                </figure>
+                <p>A loyal member of Sic Mundus. Stuck in the past with Jonas, he grows into a bearded, silent warrior who helps Adam recruit their younger selves to ensure the loop continues.</p>
+              </div>
+            </div>
+            <style>
+              #magnus-v1:checked ~ .version-contents .magnus-v1 { display:block; }
+              #magnus-v2:checked ~ .version-contents .magnus-v2 { display:block; }
+            </style>
+          </article>
+
+          <!-- Agnes -->
+          <article class="char-card">
+            <input type="radio" id="agnes-v1" name="agnes-versions" checked>
+            <label for="agnes-v1" class="tab-label">Child <span class="tab-year">1921</span></label>
+
+            <input type="radio" id="agnes-v2" name="agnes-versions">
+            <label for="agnes-v2" class="tab-label">Adult <span class="tab-year">1953</span></label>
+
+            <div class="version-contents">
+              <div class="agnes-v1 v-default">
+                <figure>
+                  <img src="img/characters/Nielsen family/Agnes Nielsen/young.webp" alt="Agnes 1921">
+                  <figcaption>Agnes - Child (1921)</figcaption>
+                </figure>
+                <p>Noah’s younger sister. She lives in Winden during the early days of the digging of the tunnel.</p>
+              </div>
+              <div class="agnes-v2">
+                <figure>
+                  <img src="img/characters/Nielsen family/Agnes Nielsen/adult.webp" alt="Agnes 1953">
+                  <figcaption>Agnes - Adult (1953)</figcaption>
+                </figure>
+                <p>A mysterious, elegant woman who moves to Winden with her son, Tronte. She is a former member of Sic Mundus who has turned against her brother Noah. She seduces Doris Tiedemann and later rejoins Sic Mundus to kill Noah, believing it is the only way to reach "Paradise."</p>
+              </div>
+            </div>
+            <style>
+              #agnes-v1:checked ~ .version-contents .agnes-v1 { display:block; }
+              #agnes-v2:checked ~ .version-contents .agnes-v2 { display:block; }
+            </style>
+          </article>
+
+          <!-- Tronte -->
+          <article class="char-card">
+            <input type="radio" id="tronte-v1" name="tronte-versions" checked>
+            <label for="tronte-v1" class="tab-label">Teen <span class="tab-year">1953</span></label>
+
+            <input type="radio" id="tronte-v2" name="tronte-versions">
+            <label for="tronte-v2" class="tab-label">Adult <span class="tab-year">1986</span></label>
+
+            <input type="radio" id="tronte-v3" name="tronte-versions">
+            <label for="tronte-v3" class="tab-label">Elder <span class="tab-year">2019</span></label>
+
+            <div class="version-contents">
+              <div class="tronte-v1 v-default">
+                <figure>
+                  <img src="img/characters/Nielsen family/Tronte Nielsen/young.webp" alt="Tronte 1953">
+                  <figcaption>Tronte - Teen (1953)</figcaption>
+                </figure>
+                <p>Agnes’s son. He has cigarette burns on his arms (implied abuse from a foster home or institution). He moves to Winden and meets young Claudia.</p>
+              </div>
+              <div class="tronte-v2">
+                <figure>
+                  <img src="img/characters/Nielsen family/Tronte Nielsen/adult.webp" alt="Tronte 1986">
+                  <figcaption>Tronte - Adult (1986)</figcaption>
+                </figure>
+                <p>A journalist. He has a long-standing affair with Claudia Tiedemann. He is one of the few who knows about the missing children early on because the Elder Peter Doppler informs him.</p>
+              </div>
+              <div class="tronte-v3">
+                <figure>
+                  <img src="img/characters/Nielsen family/Tronte Nielsen/old.webp" alt="Tronte 2019">
+                  <figcaption>Tronte — Elder (2019)</figcaption>
+                </figure>
+                <p>A quiet man who follows the orders of the "unknown" (his father) and Claudia. He moves Mads Nielsen’s body to the forest to preserve the timeline.</p>
+              </div>
+            </div>
+            <style>
+              #tronte-v1:checked ~ .version-contents .tronte-v1 { display:block; }
+              #tronte-v2:checked ~ .version-contents .tronte-v2 { display:block; }
+              #tronte-v3:checked ~ .version-contents .tronte-v3 { display:block; }
+            </style>
+          </article>
+
+          <!-- Jana -->
+          <article class="char-card">
+            <input type="radio" id="jana-v1" name="jana-versions" checked>
+            <label for="jana-v1" class="tab-label">Teen <span class="tab-year">1953</span></label>
+
+            <input type="radio" id="jana-v2" name="jana-versions">
+            <label for="jana-v2" class="tab-label">Adult <span class="tab-year">1986</span></label>
+
+            <input type="radio" id="jana-v3" name="jana-versions">
+            <label for="jana-v3" class="tab-label">Elder <span class="tab-year">2019</span></label>
+
+            <div class="version-contents">
+              <div class="jana-v1 v-default">
+                <figure>
+                  <img src="img/characters/Nielsen family/Jana Nielsen/young.webp" alt="Jana 1953">
+                  <figcaption>Jana - Teen (1953)</figcaption>
+                </figure>
+                <p>A young girl who buys a watch from the Stranger.</p>
+              </div>
+              <div class="jana-v2">
+                <figure>
+                  <img src="img/characters/Nielsen family/Jana Nielsen/adult.webp" alt="Jana 1986">
+                  <figcaption>Jana - Adult (1986)</figcaption>
+                </figure>
+                <p>Ulrich’s mother. She is mentally broken by the disappearance of her son Mads..</p>
+              </div>
+              <div class="jana-v3">
+                <figure>
+                  <img src="img/characters/Nielsen family/Jana Nielsen/old.webp" alt="Jana 2019">
+                  <figcaption>Jana - Elder (2019)</figcaption>
+                </figure>
+                <p>She claims to see "colors" and knows that Mads has not simply run away; she eventually sees his body when the timeline fractures.</p>
+              </div>
+            </div>
+            <style>
+              #jana-v1:checked ~ .version-contents .jana-v1 { display:block; }
+              #jana-v2:checked ~ .version-contents .jana-v2 { display:block; }
+              #jana-v3:checked ~ .version-contents .jana-v3 { display:block; }
+            </style>
+          </article>
+
+        </div>
+      </div>
+      
+      <!-- ===== THE TIEDEMANN FAMILY ===== -->
+      <div class="family-group" aria-label="Tiedemann family">
+        <h2 class="family-name">The Tiedemann Family</h2>
+        <div class="character-row">
+
+          <!-- Claudia -->
+          <article class="char-card">
+            <input type="radio" id="claudia-v1" name="claudia-versions" checked>
+            <label for="claudia-v1" class="tab-label">Child <span class="tab-year">1953</span></label>
+
+            <input type="radio" id="claudia-v2" name="claudia-versions">
+            <label for="claudia-v2" class="tab-label">Adult <span class="tab-year">1986</span></label>
+
+            <input type="radio" id="claudia-v3" name="claudia-versions">
+            <label for="claudia-v3" class="tab-label">Elder <span class="tab-year">The White Devil</span></label>
+
+            <div class="version-contents">
+              <div class="claudia-v1 v-default">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Claudia Tiedemann/young.webp" alt="Claudia 1953">
+                  <figcaption>Claudia - Child (1953)</figcaption>
+                </figure>
+                <p>The daughter of a police officer, tutored by Helge. She is bright and inquisitive.</p>
+              </div>
+              <div class="claudia-v2">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Claudia Tiedemann/adult.webp" alt="Claudia 1986">
+                  <figcaption>Claudia - Adult (1986)</figcaption>
+                </figure>
+                <p>The ambitious director of the nuclear power plant. She discovers the "God Particle" (a black substance) in the plant's waste barrels. She accidentally kills her father, Egon, in a struggle to keep the secret.</p>
+              </div>
+              <div class="claudia-v3">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Claudia Tiedemann/old.webp" alt="Claudia elder">
+                  <figcaption>Claudia - Elder (The White Devil)</figcaption>
+                </figure>
+                <p>A master time traveler and the main opponent to Adam. She teaches Jonas and guides various characters. Ultimately, she is the only one who figures out the true origin of the loop..</p>
+              </div>
+            </div>
+            <style>
+              #claudia-v1:checked ~ .version-contents .claudia-v1 { display:block; }
+              #claudia-v2:checked ~ .version-contents .claudia-v2 { display:block; }
+              #claudia-v3:checked ~ .version-contents .claudia-v3 { display:block; }
+            </style>
+          </article>
+
+          <!-- Regina -->
+          <article class="char-card">
+            <input type="radio" id="regina-v1" name="regina-versions" checked>
+            <label for="regina-v1" class="tab-label">Teen <span class="tab-year">1986</span></label>
+
+            <input type="radio" id="regina-v2" name="regina-versions">
+            <label for="regina-v2" class="tab-label">Adult <span class="tab-year">2019</span></label>
+
+            <div class="version-contents">
+              <div class="regina-v1 v-default">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Regina Tiedemann/young.webp" alt="Regina 1986">
+                  <figcaption>Regina - Teen (1986)</figcaption>
+                </figure>
+                <p>An anxious, bullied girl. She is tied to a tree in the forest by Katharina and Ulrich, which leads to her meeting the fugitive Boris Niewald (Aleksander).</p>
+              </div>
+              <div class="regina-v2">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Regina Tiedemann/adult.webp" alt="Regina 2019">
+                  <figcaption>Regina - Adult (2019)</figcaption>
+                </figure>
+                <p>Owner of the Waldhotel Winden. She is dying of cancer. Unlike almost everyone else, she is not a time traveler and has no part in the "knot." Her survival is the ultimate motivation for her mother, Claudia.</p>
+              </div>
+            </div>
+            <style>
+              #regina-v1:checked ~ .version-contents .regina-v1 { display:block; }
+              #regina-v2:checked ~ .version-contents .regina-v2 { display:block; }
+            </style>
+          </article>
+
+          <!-- Egon -->
+          <article class="char-card">
+            <input type="radio" id="egon-v1" name="egon-versions" checked>
+            <label for="egon-v1" class="tab-label">Adult <span class="tab-year">1953</span></label>
+
+            <input type="radio" id="egon-v2" name="egon-versions">
+            <label for="egon-v2" class="tab-label">Elder <span class="tab-year">1986</span></label>
+
+            <div class="version-contents">
+              <div class="egon-v1 v-default">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Egon Tiedemann/adult.webp" alt="Egon 1953">
+                  <figcaption>Egon - Adult (1953)</figcaption>
+                </figure>
+                <p>A straight-laced, functional alcoholic police officer. He investigates the two child bodies found at the construction site and arrests Ulrich.</p>
+              </div>
+              <div class="egon-v2">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Egon Tiedemann/old.webp" alt="Egon 1986">
+                  <figcaption>Egon - Elder (1986)</figcaption>
+                </figure>
+                <p>A retired officer nearing the end of his life. He begins to realize he made mistakes in the past (specifically regarding Ulrich) and tries to reopen old cases before his death.</p>
+              </div>
+            </div>
+            <style>
+              #egon-v1:checked ~ .version-contents .egon-v1 { display:block; }
+              #egon-v2:checked ~ .version-contents .egon-v2 { display:block; }
+            </style>
+          </article>
+
+          
+
+          <!-- Aleksander -->
+          <article class="char-card">
+            <input type="radio" id="aleksander-v1" name="aleksander-versions" checked>
+            <label for="aleksander-v1" class="tab-label">Teen <span class="tab-year">1986</span></label>
+
+            <input type="radio" id="aleksander-v2" name="aleksander-versions">
+            <label for="aleksander-v2" class="tab-label">Adult <span class="tab-year">2019</span></label>
+
+            <div class="version-contents">
+              <div class="aleksander-v1 v-default">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Aleksander Tiedemann (Boris Niewald)/young.webp" alt="Aleksander 1986">
+                  <figcaption>Aleksander - Teen (1986)</figcaption>
+                </figure>
+                <p>A wounded fugitive on the run for murder. He steals the identity of "Aleksander Tiedemann," hides his gun and passport in the woods, and protects Regina.</p>
+              </div>
+              <div class="aleksander-v2">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Aleksander Tiedemann (Boris Niewald)/adult.webp" alt="Aleksander 2019">
+                  <figcaption>Aleksander - Adult (2019)</figcaption>
+                </figure>
+                <p>The wealthy, powerful director of the Nuclear Power Plant. He loves his wife deeply and spends decades hiding the nuclear waste (the yellow barrels) that contains the God Particle to protect the plant and his family's legacy.</p>
+              </div>
+            </div>
+            <style>
+              #aleksander-v1:checked ~ .version-contents .aleksander-v1 { display:block; }
+              #aleksander-v2:checked ~ .version-contents .aleksander-v2 { display:block; }
+            </style>
+          </article>
+
+          <!-- Bartosz -->
+          <article class="char-card">
+            <input type="radio" id="bartosz-v1" name="bartosz-versions" checked>
+            <label for="bartosz-v1" class="tab-label">Teen <span class="tab-year">2019</span></label>
+
+            <input type="radio" id="bartosz-v2" name="bartosz-versions">
+            <label for="bartosz-v2" class="tab-label">Adult <span class="tab-year">1890</span></label>
+
+            <div class="version-contents">
+              <div class="bartosz-v1 v-default">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Bartosz Tiedemann/teenager.webp" alt="Bartosz 2019">
+                  <figcaption>Bartosz - Teen (2019)</figcaption>
+                </figure>
+                <p>Jonas’s best friend. He feels betrayed when Jonas returns and connects with Martha. He is manipulated by Noah into working for Sic Mundus.</p>
+              </div>
+              <div class="bartosz-v2">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Bartosz Tiedemann/adult.webp" alt="Bartosz 1890">
+                  <figcaption>Bartosz - Adult (1890)</figcaption>
+                </figure>
+                <p>Stuck in the 19th century with Jonas, Magnus, and Franziska. He loses hope in Adam’s plan. He marries Silja and becomes the father of Hanno (Noah) and Agnes. He is eventually killed by his own son, young Noah.</p>
+              </div>
+            </div>
+            <style>
+              #bartosz-v1:checked ~ .version-contents .bartosz-v1 { display:block; }
+              #bartosz-v2:checked ~ .version-contents .bartosz-v2 { display:block; }
+            </style>
+          </article>
+
+          <!-- Silja -->
+          <article class="char-card">
+            <input type="radio" id="silja-v1" name="silja-versions" checked>
+            <label for="silja-v1" class="tab-label">Young <span class="tab-year">2053</span></label>
+
+            <input type="radio" id="silja-v2" name="silja-versions">
+            <label for="silja-v2" class="tab-label">Adult <span class="tab-year">1890</span></label>
+
+            <div class="version-contents">
+              <div class="silja-v1 v-default">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Silja Tiedemann/young.webp" alt="Silja 2053"  style="object-position: center 25%;">
+                  <figcaption>Silja - Young (2053)</figcaption>
+                </figure>
+                <p>The "Girl from the Future" with the scar on her face who serves as Elisabeth’s interpreter and guards the power plant.</p>
+              </div>
+              <div class="silja-v2">
+                <figure>
+                  <img src="img/characters/Tiedemann family/Silja Tiedemann/teenager.webp" alt="Silja 1890" style="object-position: center 30%;">
+                  <figcaption>Silja - Adult (1890)</figcaption>
+                </figure>
+                <p>She travels back to 1890 to fulfill the prophecy, marrying Bartosz and giving birth to Hanno and Agnes, before dying in childbirth. She is the daughter of Hannah and Egon.</p>
+              </div>
+            </div>
+            <style>
+              #silja-v1:checked ~ .version-contents .silja-v1 { display:block; }
+              #silja-v2:checked ~ .version-contents .silja-v2 { display:block; }
+            </style>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- ===== THE DOPPLER FAMILY ===== -->
+      <div class="family-group" aria-label="Doppler family">
+        <h2 class="family-name">The Doppler Family</h2>
+        <div class="character-row">
+
+          <!-- Helge -->
+          <article class="char-card">
+            <input type="radio" id="helge-v1" name="helge-versions" checked>
+            <label for="helge-v1" class="tab-label">Child <span class="tab-year">1953</span></label>
+
+            <input type="radio" id="helge-v2" name="helge-versions">
+            <label for="helge-v2" class="tab-label">Adult <span class="tab-year">1986</span></label>
+
+            <input type="radio" id="helge-v3" name="helge-versions">
+            <label for="helge-v3" class="tab-label">Elder <span class="tab-year">2019</span></label>
+
+            <div class="version-contents">
+              <div class="helge-v1 v-default">
+                <figure>
+                  <img src="img/characters/Doppler family/Helge Doppler/yooung.webp" alt="Helge 1953">
+                  <figcaption>Helge - Child (1953)</figcaption>
+                </figure>
+                <p>A timid boy bullied by others. He is attacked by Adult Ulrich and left for dead in the bunker, which leads him to be experimented on by Noah.</p>
+              </div>
+              <div class="helge-v2">
+                <figure>
+                  <img src="img/characters/Doppler family/Helge Doppler/adult.webp" alt="Helge 1986">
+                  <figcaption>Helge - Adult (1986)</figcaption>
+                </figure>
+                <p>He works as a cleaner at the power plant and acts as Noah's henchman, kidnapping children to test an early time machine chair. He does this largely out of fear and manipulation.</p>
+              </div>
+              <div class="helge-v3">
+                <figure>
+                  <img src="img/characters/Doppler family/Helge Doppler/old.webp" alt="Helge 2019">
+                  <figcaption>Helge - Elder (2019)</figcaption>
+                </figure>
+                <p>Suffering from dementia in a nursing home. He has moments of clarity where he tries to warn the town ("It will happen again") and eventually travels back to 1986 to stop his younger self.</p>
+              </div>
+            </div>
+            <style>
+              #helge-v1:checked ~ .version-contents .helge-v1 { display:block; }
+              #helge-v2:checked ~ .version-contents .helge-v2 { display:block; }
+              #helge-v3:checked ~ .version-contents .helge-v3 { display:block; }
+            </style>
+          </article>
+
+          <!-- Charlotte -->
+          <article class="char-card">
+            <input type="radio" id="charlotte-v1" name="charlotte-versions" checked>
+            <label for="charlotte-v1" class="tab-label">Teen <span class="tab-year">1986</span></label>
+
+            <input type="radio" id="charlotte-v2" name="charlotte-versions">
+            <label for="charlotte-v2" class="tab-label">Adult <span class="tab-year">2019</span></label>
+
+            <div class="version-contents">
+              <div class="charlotte-v1 v-default">
+                <figure>
+                  <img src="img/characters/Doppler family/Charlotte Doppler/teenager.webp" alt="Charlotte 1986">
+                  <figcaption>Charlotte - Teen (1986)</figcaption>
+                </figure>
+                <p>An intelligent, lonely girl fascinated by dead birds and the strange weather phenomena in Winden. Raised by H.G. Tannhaus.</p>
+              </div>
+              <div class="charlotte-v2">
+                <figure>
+                  <img src="img/characters/Doppler family/Charlotte Doppler/adult.webp" alt="Charlotte 2019">
+                  <figcaption>Charlotte - Adult (2019)</figcaption>
+                </figure>
+                <p>The rational Chief of Police. She tries to solve the missing children cases using logic but eventually discovers the horrifying truth about her own origin (she is her own daughter's daughter).</p>
+              </div>
+            </div>
+            <style>
+              #charlotte-v1:checked ~ .version-contents .charlotte-v1 { display:block; }
+              #charlotte-v2:checked ~ .version-contents .charlotte-v2 { display:block; }
+            </style>
+          </article>
+
+          <!-- Elisabeth -->
+          <article class="char-card">
+            <input type="radio" id="elisabeth-v1" name="elisabeth-versions" checked>
+            <label for="elisabeth-v1" class="tab-label">Child <span class="tab-year">2019</span></label>
+
+            <input type="radio" id="elisabeth-v2" name="elisabeth-versions">
+            <label for="elisabeth-v2" class="tab-label">Adult <span class="tab-year">2053</span></label>
+
+            <div class="version-contents">
+              <div class="elisabeth-v1 v-default">
+                <figure>
+                  <img src="img/characters/Doppler family/Elisabeth Doppler/young.webp" alt="Elisabeth 2019" style="object-position: center 50%;">
+                  <figcaption>Elisabeth - Child (2019)</figcaption>
+                </figure>
+                <p>Charlotte’s deaf daughter. She has a chance encounter with Noah, who gives her a pocket watch. She survives the apocalypse in the bunker with her father Peter.</p>
+              </div>
+              <div class="elisabeth-v2">
+                <figure>
+                  <img src="img/characters/Doppler family/Elisabeth Doppler/adult.webp" alt="Elisabeth 2053">
+                  <figcaption>Elisabeth - Adult (2053)</figcaption>
+                </figure>
+                <p>The fierce, militaristic leader of the survivors in the post-apocalyptic future. She eventually mates with Noah and gives birth to a baby girl-Charlotte. She then sends baby Charlotte back in time, making Elisabeth both the mother and daughter of Charlotte.</p>
+              </div>
+            </div>
+            <style>
+              #elisabeth-v1:checked ~ .version-contents .elisabeth-v1 { display:block; }
+              #elisabeth-v2:checked ~ .version-contents .elisabeth-v2 { display:block; }
+            </style>
+          </article>
+
+          <!-- Peter -->
+          <article class="char-card">
+            <input type="radio" id="peter-v2" name="peter-versions" checked>
+            <label for="peter-v2" class="tab-label">Teen <span class="tab-year">1987</span></label>
+
+            <input type="radio" id="peter-v1" name="peter-versions" >
+            <label for="peter-v1" class="tab-label">Adult <span class="tab-year">2019</span></label>
+
+
+            <div class="version-contents">
+                <div class="peter-v2  v-default">
+                 <figure>
+                   <img src="img/characters/Doppler family/Peter Doppler/teenager.webp" alt="Peter 1987">
+                    <figcaption>Peter - Teen (1987)</figcaption>
+                  </figure>
+                  <p>We see glimpses of him arriving in Winden after the death of his mother, meeting his father Helge for the first time.</p>
+              </div>
+              <div class="peter-v1">
+                <figure>
+                  <img src="img/characters/Doppler family/Peter Doppler/adult.webp" alt="Peter 2019">
+                  <figcaption>Peter - Adult (2019)</figcaption>
+                </figure>
+                <p>Charlotte’s husband and a therapist. He is not originally from Winden (he arrived in 1987). He is living a lie (closeted gay man) and is the first to witness the body of Mads Nielsen falling through the time rift in the bunker. He becomes a guardian of the timeline's secrets.</p>
+              </div>
+
+            </div>
+            <style>
+               #peter-v1:checked ~ .version-contents .peter-v1 { display:block; }
+              #peter-v2:checked ~ .version-contents .peter-v2 { display:block; }
+             
+            </style>
+          </article>
+
+          <!-- Franziska -->
+          <article class="char-card">
+            <input type="radio" id="franziska-v1" name="franziska-versions" checked>
+            <label for="franziska-v1" class="tab-label">Teen <span class="tab-year">2019</span></label>
+
+            <input type="radio" id="franziska-v2" name="franziska-versions">
+            <label for="franziska-v2" class="tab-label">Adult <span class="tab-year">1921</span></label>
+
+            <div class="version-contents">
+              <div class="franziska-v1 v-default">
+                <figure>
+                  <img src="img/characters/Doppler family/Franziska Doppler/young.webp" alt="Franziska 2019">
+                  <figcaption>Franziska - Teen (2019)</figcaption>
+                </figure>
+                <p>An honor student who feels suffocated by her family's dysfunction. She sells hormone prescriptions to Benni (a sex worker) to save money to leave Winden. She falls in love with Magnus.</p>
+              </div>
+              <div class="franziska-v2">
+                <figure>
+                  <img src="img/characters/Doppler family/Franziska Doppler/adult.webp" alt="Franziska 1921">
+                  <figcaption>Franziska - Adult (1921)</figcaption>
+                </figure>
+                <p>Like Magnus, she becomes a high-ranking member of Sic Mundus. She is the red-haired woman often seen aiding Adam.</p>
+              </div>
+            </div>
+            <style>
+              #franziska-v1:checked ~ .version-contents .franziska-v1 { display:block; }
+              #franziska-v2:checked ~ .version-contents .franziska-v2 { display:block; }
+            </style>
+          </article>
+
+          
+
+        </div>
+      </div>
+
+
+      <!-- ===== OUTSIDERS & CONNECTORS ===== -->
+      <div class="family-group" aria-label="Outsiders and connectors">
+        <h2 class="family-name">The Outsiders & Connectors</h2>
+        <div class="character-row">
+
+          <!-- Noah -->
+          <article class="char-card">
+            <input type="radio" id="noah-v1" name="noah-versions" checked>
+            <label for="noah-v1" class="tab-label">Young <span class="tab-year">1921</span></label>
+
+            <input type="radio" id="noah-v2" name="noah-versions">
+            <label for="noah-v2" class="tab-label">Adult <span class="tab-year"></span></label>
+
+            <div class="version-contents">
+              <div class="noah-v1 v-default">
+                <figure>
+                  <img src="img/characters/others/Noah (Hanno Tauber)/teenager.webp" alt="Noah young 1921" style="object-position: center 30%;">
+                  <figcaption>Noah - Young (1921)</figcaption>
+                </figure>
+                <p>A faithful acolyte of Sic Mundus. He kills his own father because he loses faith.</p>
+              </div>
+              <div class="noah-v2">
+                <figure>
+                  <img src="img/characters/others/Noah (Hanno Tauber)/adult.webp" alt="Noah adult" style="object-position: center 28%;">
+                  <figcaption>Noah - Adult</figcaption>
+                </figure>
+                <p>The cryptic priest who doesn't seem to age. He acts as the main antagonist in Season 1, kidnapping boys to test the time machine. He eventually learns he has been used by Adam.</p>
+              </div>
+            </div>
+            <style>
+              #noah-v1:checked ~ .version-contents .noah-v1 { display:block; }
+              #noah-v2:checked ~ .version-contents .noah-v2 { display:block; }
+            </style>
+          </article>
+
+          <!-- The Unknown (Origin) -->
+          <article class="char-card">
+            <input type="radio" id="origin-v1" name="origin-versions" checked>
+            <label for="origin-v1" class="tab-label">Child <span class="tab-year"></span></label>
+
+            <input type="radio" id="origin-v2" name="origin-versions">
+            <label for="origin-v2" class="tab-label">Adult <span class="tab-year"></span></label>
+
+            <input type="radio" id="origin-v3" name="origin-versions">
+            <label for="origin-v3" class="tab-label">Old <span class="tab-year"></span></label>
+
+            <div class="version-contents">
+              <div class="origin-v1 v-default">
+                <figure>
+                  <img src="img/characters/others/The Unknown (The Origin)/young.webp" alt="Origin child" style="object-position: center 40%;">
+                  <figcaption>The Unknown - Child</figcaption>
+                </figure>
+                <p>The youngest version of the trio, often seen silently observing and assisting his older selves.</p>
+              </div>
+              <div class="origin-v2">
+                <figure>
+                  <img src="img/characters/others/The Unknown (The Origin)/adult.webp" alt="Origin adult" style="object-position: center 20%;">
+                  <figcaption>The Unknown - Adult</figcaption>
+                </figure>
+                <p>The central figure of the trio, who carries out the violent acts needed to preserve the timeline, such as the power plant incident.</p>
+              </div>
+              <div class="origin-v3">
+                <figure>
+                  <img src="img/characters/others/The Unknown (The Origin)/old.webp" alt="Origin old" style="object-position: center 20%;">
+                  <figcaption>The Unknown - Old</figcaption>
+                </figure>
+                <p>The eldest version, providing guidance and authority to the group. Together, they ensure the apocalypse happens in both worlds and are the ancestors of the Nielsen line.</p>
+              </div>
+            </div>
+            <style>
+              #origin-v1:checked ~ .version-contents .origin-v1 { display:block; }
+              #origin-v2:checked ~ .version-contents .origin-v2 { display:block; }
+              #origin-v3:checked ~ .version-contents .origin-v3 { display:block; }
+            </style>
+          </article>
+
+          <!-- Tannhaus -->
+          <article class="char-card">
+            <input type="radio" id="tannhaus-v1" name="tannhaus-versions" checked>
+            <label for="tannhaus-v1" class="tab-label">Adult <span class="tab-year">1953</span></label>
+
+            <input type="radio" id="tannhaus-v2" name="tannhaus-versions">
+            <label for="tannhaus-v2" class="tab-label">Adult <span class="tab-year">1971</span></label>
+
+            <input type="radio" id="tannhaus-v3" name="tannhaus-versions">
+            <label for="tannhaus-v3" class="tab-label">Elder <span class="tab-year">1986</span></label>
+
+            <div class="version-contents">
+              <div class="tannhaus-v1 v-default">
+                <figure>
+                  <img src="img/characters/others/H.G. Tannhaus/1953.webp" alt="Tannhaus 1953">
+                  <figcaption>H. G. Tannhaus - Adult (1953)</figcaption>
+                </figure>
+                <p>A skilled clockmaker who receives blueprints for a time machine from the future, though he doesn't understand them yet.</p>
+              </div>
+              <div class="tannhaus-v2">
+                <figure>
+                  <img src="img/characters/others/H.G. Tannhaus/1971.webp"Tannhaus 1971">
+                  <figcaption>H. G. Tannhaus - Adult (1971)</figcaption>
+                </figure>
+                <p>A grieving father whose son, daughter-in-law, and granddaughter die in a car crash. In the Origin World, this grief drives him to build a machine to save them, which splits reality.</p>
+              </div>
+              <div class="tannhaus-v3">
+                <figure>
+                  <img src="img/characters/others/H.G. Tannhaus/1986.webp" alt="Tannhaus 1986">
+                  <figcaption>H. G. Tannhaus - Elder (1986)</figcaption>
+                </figure>
+                <p>The author of A Journey Through Time. He unknowingly builds the first functional time travel device in the loop based on the information given to him by travelers, closing the bootstrap paradox.</p>
+              </div>
+            </div>
+            <style>
+              #tannhaus-v1:checked ~ .version-contents .tannhaus-v1 { display:block; }
+              #tannhaus-v2:checked ~ .version-contents .tannhaus-v2 { display:block; }
+              #tannhaus-v3:checked ~ .version-contents .tannhaus-v3 { display:block; }
+            </style>
+          </article>
+
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+        <p>&copy; created-by @kumaresan.ad23@krct.ac.in</p>
+    <p> 2026 Dark Fan Page. This is a fan-made page celebrating the Netflix series Dark.</p>
+    
+  </footer>
+
+</body>
+</html>
