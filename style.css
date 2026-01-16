@@ -1,0 +1,978 @@
+/* ===== Root Variables ===== */
+:root {
+  --bg: #0a0e27;
+  --bg-secondary: #0f1438;
+  --card: rgba(0, 0, 0, 0.85);
+  --card-border: rgba(46, 204, 64, 0.06);
+  --chem-green: #2ecc40;
+  --green-accent: #46b882;
+  --yellow-accent: #d4af37;
+  --text: #e0e0e0;
+  --text-muted: #b0b0b0;
+  --text-dark: #7a7a7a;
+  --red:#C41E3A;
+  --shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+  --border-radius: 12px;
+}
+
+/* ===== Global Resets & Typography ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Global Scrollbar Hiding ===== */
+
+html {
+  scroll-behavior: smooth;
+  
+  /* Hide scrollbar for Firefox */
+  scrollbar-width: none; 
+  
+  /* Hide scrollbar for IE/Edge */
+  -ms-overflow-style: none; 
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 16px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Blurred background image */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  
+  /* CORRECT PATH based on your screenshot */
+  background-image: url('../img/background/bg.jpg');
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Make transparent so image shows */
+  background-color: transparent; 
+  
+  /* Adjust blur/darkness */
+  filter: blur(6px) brightness(0.4); 
+  z-index: -1;
+}
+
+
+/* ===== Typography ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Update this in the Typography section */
+p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  
+  /* CHANGE: Justify text globally */
+  text-align: justify;
+  text-justify: inter-word; /* Improves spacing between words */
+  hyphens: auto;            /* Breaks long words if needed */
+}
+
+a {
+  color: var(--chem-green);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--yellow-accent);
+  text-decoration: underline;
+}
+
+/* ===== Navigation ===== */
+/* Update this rule in style.css */
+.navbar {
+  /* CHANGE: Make transparent so the background image shows through */
+  background-color: transparent; 
+  
+  padding: 1.5rem 0;
+  
+  /* OPTIONAL: Remove border if you want it completely seamless */
+  border-bottom: none; 
+  /* border-bottom: 1px solid var(--card-border);  <-- OR Keep this line if you want a thin line */
+  
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  /* OPTIONAL: Add a subtle backdrop blur so text is readable over the image */
+  backdrop-filter: blur(10px); 
+  box-shadow: var(--shadow);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--chem-green);
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* CHANGE: This handles the color when you mouse over the link */
+.nav-links a:hover {
+  color: #C41E3A;  /* Deep Royal Red (Matches your headings) */
+  text-decoration: none;
+}
+
+/* ADD: This handles the link color if you add class="active" in your HTML */
+.nav-links a.active {
+  color: #C41E3A;
+  font-weight: 700; /* Optional: Makes the current page text bolder */
+}
+
+/* FORCE the logo to be small */
+.nav-logo-img {
+  height: 90px;       /* This controls the size - 50px is standard for navbars */
+  width: auto;        /* Keeps the letters from squishing */
+  display: block;
+  object-fit: contain;
+}
+
+/* Optional: Ensure the container doesn't stretch */
+.nav-logo-link {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+
+/* ===== Modern View Transition (Left to Right) ===== */
+
+  /* 1. Enable the Modern API */
+  @view-transition {
+    navigation: auto;
+  }
+
+  /* 2. Create the Custom Animations */
+
+  /* The NEW page (Arriving) */
+  @keyframes slideInFromLeft {
+    from { 
+      opacity: 0;
+      transform: translateX(-40px); /* Starts slightly to the Left */
+    }
+    to { 
+      opacity: 1;
+      transform: translateX(0); 
+    }
+  }
+
+  /* The OLD page (Leaving) */
+  @keyframes fadeOutRight {
+    from { 
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to { 
+      opacity: 0;
+      transform: translateX(40px); /* Exits slightly to the Right */
+    }
+  }
+
+  /* 3. Assign Animations to the View Transition Elements */
+
+  /* This targets the snapshot of the OLD page leaving */
+  ::view-transition-old(root) {
+    animation: fadeOutRight 0.5s ease-out forwards;
+  }
+
+  /* This targets the snapshot of the NEW page arriving */
+  ::view-transition-new(root) {
+    animation: slideInFromLeft 0.5s ease-out forwards;
+  }
+
+  /* 4. Fallback for older browsers (Safari/Firefox) */
+  /* They will ignore the above and use this standard body fade instead */
+  body {
+    animation: none; /* View API handles it on Chrome/Edge */
+  }
+
+/* ===== Main & Page Sections ===== */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .page-section {
+    padding: 4rem 0;
+  }
+
+  .page-section > h1 {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+/* ===== Credits ===== */
+  .credits {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--card-border);
+    margin-top: 2rem;
+  }
+
+/* ===== Buttons ===== */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--bg);
+    background-color: transparent;
+    color: var(--chem-green);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+  }
+
+  .btn:hover {
+    background-color: var(--chem-green);
+    color: var(--bg);
+    text-decoration: none;
+  }
+
+  .btn:focus {
+    outline: 2px solid #C41E3A;
+    outline-offset: 2px;
+  }
+
+  .btn-primary {
+    background-color: var(--text);
+    border-color: var(--bg);
+    color:  var(--bg-secondary);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--bg) ;
+    border-color: var(--bg);
+    color: var(--text) ;
+  }
+
+  .btn-secondary {
+    background-color: var(--text);
+    color: var(--bg);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--yellow-accent);
+    color: var(--text);
+  }
+
+/* ===== Cards ===== */
+  .char-card,
+  .episode-card,
+  .timeline-card,
+  .scifi-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+
+  .char-card:hover,
+  .episode-card:hover,
+  .timeline-card:hover,
+  .scifi-card:hover {
+    border-color: rgba(227, 33, 33, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(234, 160, 177, 0.15);
+  }
+
+
+/* ===== Episode Cards (Horizontal Scroll) ===== */
+
+  /* 1. The Container - Horizontal Scroll */
+  .episode-row {
+    display: flex;
+    overflow-x: auto;           /* Enable horizontal scrolling */
+    gap: 1.5rem;                /* Space between cards */
+    padding-bottom: 1.5rem;     /* Padding for hover effects */
+    scroll-behavior: smooth;
+    align-items: stretch;       /* Make cards same height */
+    
+    /* Hide Scrollbar (Firefox) */
+    scrollbar-width: none;      
+    /* Hide Scrollbar (IE/Edge) */
+    -ms-overflow-style: none;  
+  }
+
+  /* Hide Scrollbar (Chrome/Safari) */
+  .episode-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 2. The Episode Card - Fixed Width */
+  .episode-card {
+    /* Fixed width ensures they sit in a row and don't squish */
+    flex: 0 0 300px;
+    width: 300px;
+    min-width: 300px;
+    
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+  }
+
+  /* Hover Effect */
+  .episode-card:hover {
+    transform: none;
+    border-color: rgba(227, 33, 33, 0.3);
+    box-shadow: 0 12px 36px rgba(234, 160, 177, 0.15);
+  }
+
+  /* 3. Episode Image */
+  .episode-card img {
+    width: 100%;
+    height: 170px;          /* Fixed height for uniformity */
+    object-fit: cover;      /* Crop to fill */
+  }
+
+  /* 4. Episode Info Text */
+  .episode-info {
+    padding: 1.25rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .episode-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--yellow-accent);
+  }
+
+  .episode-info p {
+    font-size: 0.9rem;
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* 5. Section Header Styling */
+  .season-section {
+    margin-bottom: 4rem;
+  }
+
+  .season-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    border-left: 4px solid var(--yellow-accent);
+    padding-left: 1rem;
+  }
+
+/* ===== Timeline Cards ===== */
+  .timeline-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  .timeline-card:nth-child(even) {
+    direction: rtl;
+  }
+
+  .timeline-card:nth-child(even) > * {
+    direction: ltr;
+  }
+
+  .timeline-image {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    height: 300px;
+  }
+
+  .timeline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .timeline-content h2 {
+    color: var(--yellow-accent);
+    margin-bottom: 1rem;
+  }
+
+
+/* ===== Timeline Table (Clean & Essential) ===== */
+
+  .timeline-table-section {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  /* 1. The Table Card (Merged & Cleaned) */
+  .timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    
+    /* Smooth transition for the Yellow Glow effect */
+    transition: all 0.3s ease;
+  }
+
+  /* 2. The Yellow Glow on Hover (Matches other cards) */
+  .timeline-table:hover {
+    border-color: rgba(227, 33, 33, 0.3);;
+    box-shadow: 0 12px 36px rgba(234, 160, 177, 0.15);
+    transform: none; /* Keeps it stable */
+  }
+
+  /* 3. The Header (Red Theme) */
+  .timeline-table th {
+    padding: 1rem;
+    text-align: left;
+    
+    /* Deep Royal Red Text */
+    color:var(--yellow-accent); 
+    
+    /* Subtle Red Background */
+    background: rgba(196, 30, 58, 0.1); 
+    
+    /* Solid bottom line */
+    border-bottom: 1px solid var(--card-border); 
+  }
+
+  /* 4. The Body Cells */
+  .timeline-table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--card-border);
+    color: var(--text-muted);
+  }
+
+  /* 5. Simple Row Hover (Usability only) */
+  .timeline-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03); /* Very subtle light up */
+  }
+
+/* ===== Sci-Fi Cards ===== */
+  .scifi-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  .scifi-card:nth-child(even) {
+    direction: rtl;
+  }
+
+  .scifi-card:nth-child(even) > * {
+    direction: ltr;
+  }
+
+  .scifi-image {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    height: 300px;
+  }
+
+  .scifi-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .scifi-content h2 {
+    color: var(--yellow-accent);
+    margin-bottom: 1rem;
+  }
+
+  .scifi-content ul {
+    list-style: none;
+    margin-top: 1rem;
+  }
+
+  .scifi-content li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    color: var(--text-muted);
+  }
+
+  .scifi-content li::before {
+    content: "▪";
+    color: #C41E3A;
+    position: absolute;
+    left: 0;
+  }
+
+/* ===== Footer ===== */
+  /* Update this rule in style.css */
+  .footer {
+    /* CHANGE: Make transparent */
+    background-color: transparent;
+    
+    /* OPTIONAL: Remove top border */
+    border-top: none; 
+    
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-dark);
+    margin-top: 4rem;
+  }
+  /* Add this under your Footer section */
+  .footer p {
+    text-align: center; /* Keep the copyright text centered */
+  }
+
+/* ===== Responsive Design ===== */
+  @media (max-width: 768px) {
+    .nav-links {
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    .character-row,
+    .episode-row {
+      grid-template-columns: 1fr;
+    }
+
+    .timeline-card,
+    .scifi-card {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .timeline-card:nth-child(even),
+    .scifi-card:nth-child(even) {
+      direction: ltr;
+    }
+
+    .timeline-image,
+    .scifi-image {
+      height: 250px;
+    }
+
+    .filter-group {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    main {
+      padding: 0 1rem;
+    }
+
+    .page-section {
+      padding: 2rem 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-container {
+      padding: 0 1rem;
+    }
+
+    .nav-logo {
+      font-size: 1.4rem;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .timeline-table {
+      font-size: 0.9rem;
+    }
+
+    .timeline-table th,
+    .timeline-table td {
+      padding: 0.75rem;
+    }
+  }
+
+/* ===== Character versions - details / summary styling ===== */
+  .char-card details {
+    margin-top: 0.75rem;
+    background: transparent;
+    border-top: 1px dashed rgba(255,255,255,0.03);
+    padding-top: 0.75rem;
+  }
+
+  .char-card summary {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--yellow-accent);
+    margin-bottom: 0.5rem;
+    outline: none;
+  }
+
+  /* Remove default disclosure triangle for consistent cross-browser style */
+  .char-card summary::-webkit-details-marker { display: none; }
+  .char-card summary::marker { content: none; }
+
+  /* Versions grid */
+  .versions-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem 1rem;
+    padding: 0;
+    margin: 0.25rem 0 0 0;
+  }
+
+  /* Individual version row */
+  .versions-list li {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* small accent badge for a version label */
+  .version-badge {
+    background: rgba(46,204,64,0.08);
+    color: var(--chem-green);
+    border: 1px solid rgba(46,204,64,0.1);
+    padding: 0.18rem 0.45rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+
+  /* ensure details open/close transitions feel smooth */
+  .char-card details[open] .versions-list {
+    transition: all 0.18s ease;
+  }
+
+  /* small responsive adjustment */
+  @media (max-width: 480px) {
+    .versions-list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+/* ===== Character Cards & Horizontal Tabs (Compact / Episode Style) ===== */
+
+  /* 1. The Container for the Row */
+  .character-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.25rem;
+    padding-bottom: 1.5rem;
+    scroll-behavior: smooth;
+    /* Scrollbar hiding moved to separate rule below */
+  }
+
+  /* 2. The Card Itself - STEADY & SOLID */
+  .character-row .char-card {
+    flex: 0 0 280px;            
+    width: 280px;
+    min-width: 280px;
+    
+    /* Increased min-height slightly to fix "too small" feeling */
+    height: auto;
+    min-height: 380px;              
+    
+    display: flex;
+    flex-direction: row;        
+    flex-wrap: wrap;            
+    align-content: flex-start;  
+    
+    padding: 0;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    position: relative;
+    
+    /* Transition for border/shadow only (no movement) */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  /* HOVER EFFECT: NO FLOATING / NO MOVEMENT */
+  .character-row .char-card:hover {
+    /* Removed translateY so it stays perfectly still */
+    transform: none; 
+    
+    /* Just a brighter border and glow */
+    border-color: rgba(227, 33, 33, 0.3);
+    box-shadow: 0 12px 36px rgba(234, 160, 177, 0.15);
+  }
+
+  /* Hide Radio Buttons */
+  .char-card input[type="radio"] {
+    display: none;
+  }
+
+  /* 3. The Tabs - SMALLER (Updated) */
+  .char-card .tab-label {
+    cursor: pointer;
+    padding: 0.6rem 0.5rem;    /* Reduced padding */
+    font-weight: 600;
+    font-size: 0.75rem;        /* Smaller font */
+    color: #7a7a7a;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    
+    flex: 1;                   
+    text-align: center;
+    white-space: nowrap;       
+    overflow: hidden;          
+    text-overflow: ellipsis;   
+    max-width: 100%;           
+  }
+
+  .char-card .tab-year {
+    font-size: 0.7rem;
+    margin-left: 3px;
+    opacity: 0.6;
+  }
+
+  /* FIX: Solid Background & Glow for Active Tab */
+  .char-card input[type="radio"]:checked + .tab-label {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+    
+    /* Solid background so it doesn't look like it's fading */
+    background-color: rgba(116, 11, 11, 0.05); 
+    
+    /* Text glow */
+    text-shadow: 0 0 150px rgba(255, 255, 255, 0.3);
+  }
+
+  /* 4. The Content Area - COMPACT */
+  .version-contents {
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.85rem; /* Reduced padding */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 5. The Image - SHORTER */
+  .char-card .version-contents img {
+    width: 100%;
+    height: 150px;          /* Shorter height (like episodes) */
+    object-fit: cover; 
+    /* ADD THIS LINE: Focuses on the top (faces) instead of the center */
+    object-position: top;     
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Typography - COMPACT */
+  .char-card figcaption {
+    color: var(--yellow-accent);
+    font-weight: 700;
+    font-size: 1rem;       /* Smaller Title */
+    margin-bottom: 0.35rem;
+    line-height: 1.2;
+  }
+
+  .char-card .vc-meta {
+    font-size: 0.75rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  /* Update this in style.css */
+  .char-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+    
+    /* CHANGE THIS: 'justify' stretches text to fill the width */
+    text-align: justify; 
+    
+    /* OPTIONAL: This helps prevent big gaps between words */
+    text-justify: inter-word; 
+    hyphens: auto; /* Adds hyphens if a word is too long */
+    
+    display: block;
+    overflow: visible;
+  }
+
+  /* Toggle Logic */
+  .char-card .version-contents > div {
+    display: none;
+    animation: fadeIn 0.4s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+/* ===== Character Rows & Filters ===== */
+  .filter-group {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .filter-group input[type="radio"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--chem-green);
+  }
+
+  .family-group {
+    margin-bottom: 4rem;
+  }
+
+  .family-name {
+    font-size: 1.5rem;
+    color: var(--yellow-accent);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--card-border);
+  }
+
+  /* Update this section in style.css */
+
+
+  /* 1. The Container for the Row */
+  .character-row {
+    display: flex;
+    overflow-x: auto;           /* Keep scrolling enabled */
+    gap: 1.5rem;
+    padding-bottom: 1.5rem;
+    scroll-behavior: smooth;
+    align-items: stretch;
+    
+    /* HIDE SCROLLBAR (Firefox) */
+    scrollbar-width: none;      
+    
+    /* HIDE SCROLLBAR (IE/Edge legacy) */
+    -ms-overflow-style: none;  
+  }
+
+  /* HIDE SCROLLBAR (Chrome, Safari, Edge) */
+  .character-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Ensure the cards don't squish */
+  .character-row .char-card {
+    flex: 0 0 320px;           /* Fixed width: Don't grow, don't shrink, 300px wide */
+    scroll-snap-align: start;  /* Snap card to the start when scrolling stops */
+  }
+
+  /* Custom Scrollbar Styling (Webkit browsers like Chrome/Edge) */
+  .character-row::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .character-row::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+  }
+
+  .character-row::-webkit-scrollbar-thumb {
+    background: var(--chem-green);
+    border-radius: 4px;
+  }
+
+  .character-row::-webkit-scrollbar-thumb:hover {
+    background: var(--green-accent);
+  }
